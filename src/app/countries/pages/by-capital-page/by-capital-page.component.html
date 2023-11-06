@@ -2,8 +2,8 @@
 <hr>
 <section class="row">
   <aside class="col">
-
-    <shared-search-box placeholder="Busqueda por capital" (onValue)="searchByCapital($event)"></shared-search-box>
+    <shared-search-box placeholder="Busqueda por capital" [initialValue]="initialValue" (onDebounce)="searchByCapital($event)" ></shared-search-box>
+    <shared-loading-spinner *ngIf="isLoading" ></shared-loading-spinner>
   </aside>
 </section>
 

@@ -28,7 +28,8 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
     AboutPageComponent,
     SidebarComponent,
     ContactPageComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class SharedModule { }
