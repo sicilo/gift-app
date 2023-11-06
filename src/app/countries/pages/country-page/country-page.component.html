@@ -1,1 +1,43 @@
-<p>country-page works!</p>
+<ng-template #loading>
+  <section class="alert alert-info">Espere por favor</section>
+</ng-template>
+
+<section *ngIf="country; else loading">
+  <aside class="row">
+    <aside class="col-12">
+      <h2>Pais <strong> {{country.name.common }} </strong> </h2>
+      <hr>
+    </aside>
+  </aside>
+  <section class="row">
+    <aside class="col-4">
+      <h3>Bandera</h3>
+      <img [src]="country.flags.svg" [alt]="country.name.common" class="img-thumbnail">
+    </aside>
+    <aside class="col">
+      <h3>Información</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Poblacion: </strong> {{ country.population | number }}
+        </li>
+        <li class="list-group-item">
+          <strong>Código: </strong> {{country.cca3}}
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="row mt-2">
+    <aside class="col">
+      <h3>Traducciones</h3>
+      <aside class="d-flex flex-wrap">
+        <span class="badge bg-primary m-1">{{country.translations['ara'].common}}</span>
+        <span class="badge bg-primary m-1">{{country.translations['ces'].common}}</span>
+        <span class="badge bg-primary m-1">{{country.translations['deu'].common}}</span>
+        <span class="badge bg-primary m-1">{{country.translations['est'].common}}</span>
+        <span class="badge bg-primary m-1">{{country.translations['fin'].common}}</span>
+        <span class="badge bg-primary m-1">{{country.translations['jpn'].common}}</span>
+      </aside>
+    </aside>
+  </section>
+</section>
